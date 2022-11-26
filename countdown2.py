@@ -9,11 +9,11 @@ print('\n ~~ Countdown Timer ~~  ', sys.argv[0], '\n')
 try:
     n = int(sys.argv[1])
     assert n > 0
-    for i in range(n, -1, -1):
-        # print(i, end=" ")
+    i = n
+    while i >= 0:
         print('',i)
         time.sleep(1)
-    print()
+        i -= 1
 except (IndexError, ValueError, AssertionError):
     print('Include a positive integer as the first argument')
 finally:
