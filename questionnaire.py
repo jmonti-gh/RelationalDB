@@ -3,6 +3,7 @@
 
 print('\n ~~ Questionnaire ~~ \n')
 
+# Use a dic to store both the questions and their (future) answers
 dq = {
     "What's your name?  ": '',
     "Where are you from?  ": '',
@@ -11,12 +12,15 @@ dq = {
     "What's your favorite coding website?  ": ''
     }
 
-for q in dq:
+# Make the questions (q) - get the answers (in dq[q])
+for q in dq:                # for every key (question) of dq{}
     dq[q] = input(q)
 
-q, nm_a_loc = 1, ''
+# Print the results, initialize two variales:
+q = 1           # question number (begin in 1 - end in 5   )
+nm_a_loc = ''   # name_and_location (born empty - end {name} from {location})
 
-for k, v in dq.items():
+for k, v in dq.items():     # for every key, value pair of dq{}
     if q == 1:
         nm_a_loc += dq[k]
     elif q == 2:
