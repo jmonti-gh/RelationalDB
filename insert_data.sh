@@ -14,7 +14,7 @@ cat games.csv | while IFS="," read YEAR ROUND WINNER OPPO WINN_GS OPPO_GS
 do
         if [[ $YEAR != 'year' ]]
         then
-                # get teams_id (W - f/WINNER)
+                # get teams_id (W for WINNER - O for OPPO)
                 TEAMS_IDW=$($PSQL "SELECT team_id FROM teams WHERE name='$WINNER'")
                 TEAMS_IDO=$($PSQL "SELECT team_id FROM teams WHERE name='$OPPO'")
 
